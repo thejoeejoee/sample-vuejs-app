@@ -6,11 +6,7 @@
         </h1>
         <b-row>
             <b-col v-for="issue in issues" :key="issue.id" cols="4">
-                <b-card :title="issue.title" :sub-title="issue.id | formatId">
-                    <p>
-                        {{ issue.content }}
-                    </p>
-                </b-card>
+                <issue :issue="issue"></issue>
             </b-col>
         </b-row>
     </div>
@@ -18,14 +14,13 @@
 
 <script>
     import {mapState} from 'vuex';
+    import Issue from './Issue'
 
     export default {
         name: "IssueApp",
         props: ['title'],
-        filters: {
-            formatId(id) {
-                return `#${id}`;
-            }
+        components: {
+            Issue,
         },
         computed: {
             ...mapState(['issues']),
