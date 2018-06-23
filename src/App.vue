@@ -1,23 +1,18 @@
 <template>
     <b-container>
-        <h1>Issues</h1>
-        <b-row>
-            <b-col v-for="issue in this.$store.state.issues" :key="issue.id" cols="4">
-                <b-card :title="issue.title" :sub-title="'#' + issue.id">
-                    <p>
-                        {{ issue.content }}
-                    </p>
-                </b-card>
-            </b-col>
-        </b-row>
+        <issue-app title="Issues"></issue-app>
     </b-container>
 </template>
 
 <script>
     import issuesFixture from './fixtures/issues'
+    import IssueApp from './components/IssueApp'
 
     export default {
         name: "App",
+        components:{
+            IssueApp,
+        },
         created() {
             this.$store.commit(
                 'setIssues',
