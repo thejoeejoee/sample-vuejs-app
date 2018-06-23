@@ -2,7 +2,10 @@ const path = require('path');
 
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/main.js'),
+    entry: [
+        'bootstrap-loader',
+        path.resolve(__dirname, 'src/main.js'),
+    ],
     output: {
         path: path.resolve(__dirname, 'dist/'),
         publicPath: '/dist/',
@@ -10,6 +13,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ],
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
