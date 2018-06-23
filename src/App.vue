@@ -5,19 +5,20 @@
 </template>
 
 <script>
+    import {mapMutations, mapState} from 'vuex'
     import issuesFixture from './fixtures/issues'
     import IssueApp from './components/IssueApp'
 
     export default {
         name: "App",
-        components:{
+        components: {
             IssueApp,
         },
+        computed: mapState(['issues']),
+        methods: mapMutations(['setIssues']),
         created() {
-            this.$store.commit(
-                'setIssues',
-                issuesFixture.issues
-            )
+            if (!this.issues.length)
+                this.setIssues(issuesFixture.issues)
         },
     }
 </script>
