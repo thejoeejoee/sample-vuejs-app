@@ -9,6 +9,10 @@
                 <b-btn @click="createIssue({})" variant="success">+</b-btn>
             </span>
         </div>
+
+        <b-alert v-if="!issueCount" show variant="info">
+            No issues. You can <b-link @click="createIssue({})">add new issue</b-link>.
+        </b-alert>
         <b-row>
             <b-col v-for="issue in issues" :key="issue.id" cols="4">
                 <issue :issue="issue"></issue>
@@ -18,7 +22,7 @@
 </template>
 
 <script>
-    import {mapState, mapActions} from 'vuex';
+    import {mapActions, mapState} from 'vuex';
     import Issue from './Issue'
 
     export default {

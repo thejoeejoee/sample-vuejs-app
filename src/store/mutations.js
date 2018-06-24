@@ -11,5 +11,9 @@ export default {
 
     addIssue(state, issue) {
         state.issues.push(issue);
+    },
+
+    removeIssue(state, index) {
+        state.issues.splice(index, 1);
     }
 }

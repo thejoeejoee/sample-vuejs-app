@@ -1,4 +1,5 @@
 import _ from 'lodash'
+
 export default {
     updateIssue({state, commit, getters}, issue) {
         const stored = getters.getIssueById(issue.id);
@@ -29,5 +30,14 @@ export default {
                 _.pick(issue, ['title', 'content']),
             )
         )
+    },
+
+    removeIssue({commit, getters}, issue) {
+        if (!confirm(`Are you sure to delete issue #${issue.id}: '${issue.title}'?`))
+            return;
+
+        const index = getters.getIssueIndexById(issue.id);
+
+        commit('removeIssue', index);
     },
 }
