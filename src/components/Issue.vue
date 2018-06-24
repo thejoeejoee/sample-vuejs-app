@@ -1,5 +1,12 @@
 <template>
-    <b-card :title="issue.title" :sub-title="issue.id | formatId">
+    <b-card class="mb-4">
+
+        <template slot="header">
+            <span class="d-flex justify-content-between">
+                <span>{{ issue.title }}</span> <small>{{ issue.id | formatId }}</small>
+            </span>
+        </template>
+
         <p ref="content" contenteditable="true" @focusout="contentEdited" v-html="issue.content"></p>
     </b-card>
 </template>

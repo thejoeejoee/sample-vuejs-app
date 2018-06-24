@@ -1,9 +1,14 @@
 <template>
     <div>
-        <h1>
-            {{ title }}
-            <small>({{ issueCount }})</small>
-        </h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>
+                {{ title }}
+                <small>({{ issueCount }})</small>
+            </h1>
+            <span>
+                <b-btn @click="createIssue({})" variant="success">+</b-btn>
+            </span>
+        </div>
         <b-row>
             <b-col v-for="issue in issues" :key="issue.id" cols="4">
                 <issue :issue="issue"></issue>
@@ -13,7 +18,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex';
+    import {mapState, mapActions} from 'vuex';
     import Issue from './Issue'
 
     export default {
@@ -22,6 +27,7 @@
         components: {
             Issue,
         },
+        methods: mapActions(['createIssue']),
         computed: {
             ...mapState(['issues']),
             issueCount() {
