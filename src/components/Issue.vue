@@ -2,11 +2,23 @@
     <b-card class="mb-4">
 
         <template slot="header">
-            <span
-                    class="d-flex justify-content-between"
-            >
-                <span>{{ issue.title }}</span>
-                <span>
+            <span class="row no-gutters justify-content-between">
+                <span class="col-8 issue-name" @dblclick="editingTitle = true">
+
+                    <input
+                            v-show="editingTitle"
+                            v-model="title"
+                            @keyup.enter="titleEdited"
+                            @change="titleEdited"
+                            ref="title"
+                            class="form-control form-control-sm"
+                    >
+                    <template v-if="!editingTitle">
+                        {{ issue.title }}
+                    </template>
+
+                </span>
+                <span class="col-4 text-right">
                     <span
                             @mouseenter="mouseOver = true"
                             @mouseleave="mouseOver = false"
@@ -47,6 +59,8 @@
         data() {
             return {
                 mouseOver: false,
+                editingTitle: false,
+                title: this.issue.title,
             }
         },
         methods: {
@@ -61,15 +75,35 @@
                     }
                 ));
             },
+            titleEdited() {
+                this.updateIssue(_.extend(
+                    // merge to empty object, overwrite title
+                    {},
+                    this.issue,
+                    {
+                        title: this.title,
+                    }
+                ));
+                this.editingTitle = false;
+            },
         },
         filters: {
             formatId(id) {
                 return `#${id}`;
             }
         },
+        watch: {
+            editingTitle(val) {
+                val && this.$nextTick(() => {
+                    this.$refs.title.focus()
+                })
+            }
+        }
     }
 </script>
 
 <style scoped>
-
+    .issue-name {
+        width: 100%;
+    }
 </style>

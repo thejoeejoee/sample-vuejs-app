@@ -8,13 +8,23 @@ export default {
             return;
 
         const index = getters.getIssueIndexById(issue.id);
-        if (issue.content !== stored.content)
+        if (issue.content !== stored.content) {
             commit(
                 'updateContent', {
                     index,
                     content: issue.content
                 }
+            );
+        }
+
+        if (issue.title !== stored.title) {
+            commit(
+                'updateTitle', {
+                    index,
+                    title: issue.title
+                }
             )
+        }
     },
 
     createIssue({state, commit, getters}, issue) {

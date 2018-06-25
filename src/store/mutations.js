@@ -9,6 +9,10 @@ export default {
         state.issues[index].content = content;
     },
 
+    updateTitle(state, {index, title}) {
+        state.issues[index].title = title;
+    },
+
     addIssue(state, issue) {
         state.issues.push(issue);
     },

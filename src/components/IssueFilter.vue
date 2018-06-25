@@ -2,7 +2,7 @@
     <span>
             <b-input-group>
                 <b-input
-                        v-model="input"
+                        v-model.trim="input"
                         @input="onFilter"
 
                         name="filter"
@@ -37,7 +37,7 @@
         methods: {
             onFilter() {
                 const filterCallable = (issue) => {
-                    const input = this.input.toLowerCase().trim();
+                    const input = this.input.toLowerCase();
                     return !input || issue.title.toLowerCase().includes(input) ||
                         striptags(issue.content).toLowerCase().includes(input);
                 };
