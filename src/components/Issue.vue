@@ -3,24 +3,27 @@
 
         <template slot="header">
             <span
-                    @mouseenter="mouseOver = true"
-                    @mouseleave="mouseOver = false"
-
                     class="d-flex justify-content-between"
             >
                 <span>{{ issue.title }}</span>
                 <span>
-                    <b-btn
-                            v-if="mouseOver"
-                            @click="removeIssue(issue)"
-                            variant="danger"
-                            size="sm"
-                    >x</b-btn>
-                    <b-btn
-                            v-else
-                            size="sm"
-                            variant="outline-primary"
-                    >{{ issue.id | formatId }}</b-btn>
+                    <span
+                            @mouseenter="mouseOver = true"
+                            @mouseleave="mouseOver = false"
+                    >
+                        <b-btn
+                                v-if="mouseOver"
+                                @click="removeIssue(issue)"
+                                variant="danger"
+                                size="sm"
+                        >&cross;</b-btn>
+                        <b-btn
+                                v-else
+                                size="sm"
+                                variant="outline-primary"
+                        >{{ issue.id | formatId }}</b-btn>
+                    </span>
+                    <slot name="handle"></slot>
                 </span>
             </span>
         </template>

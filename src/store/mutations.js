@@ -15,5 +15,9 @@ export default {
 
     removeIssue(state, index) {
         state.issues.splice(index, 1);
+    },
+
+    issuesSorted(state, issues) {
+        state.issues = issues;
     }
 }

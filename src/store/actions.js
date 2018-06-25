@@ -33,7 +33,7 @@ export default {
     },
 
     removeIssue({commit, getters}, issue) {
-        if (!confirm(`Are you sure to delete issue #${issue.id}: '${issue.title}'?`))
+        if (issue.content && !confirm(`Are you sure to delete issue #${issue.id}: '${issue.title}'?`))
             return;
 
         const index = getters.getIssueIndexById(issue.id);

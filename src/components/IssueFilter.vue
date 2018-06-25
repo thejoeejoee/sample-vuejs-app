@@ -20,6 +20,7 @@
 
 <script>
     import _ from 'lodash'
+    import striptags from 'striptags'
 
     export default {
         name: "IssueFilter",
@@ -38,7 +39,7 @@
                 const filterCallable = (issue) => {
                     const input = this.input.toLowerCase().trim();
                     return !input || issue.title.toLowerCase().includes(input) ||
-                        issue.content.toLowerCase().includes(input);
+                        striptags(issue.content).toLowerCase().includes(input);
                 };
                 this.$emit(
                     'input',
