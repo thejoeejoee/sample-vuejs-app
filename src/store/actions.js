@@ -10,18 +10,18 @@ export default {
         const index = getters.getIssueIndexById(issue.id);
         if (issue.content !== stored.content) {
             commit(
-                'updateContent', {
+                'updateIssue', {
                     index,
-                    content: issue.content
+                    issue: {content: issue.content}
                 }
             );
         }
 
         if (issue.title !== stored.title) {
             commit(
-                'updateTitle', {
+                'updateIssue', {
                     index,
-                    title: issue.title
+                    issue: {title: issue.title}
                 }
             )
         }
@@ -36,8 +36,9 @@ export default {
                     id: getters.generateId,
                     content: '',
                     title: '',
+                    category_id: 1,
                 },
-                _.pick(issue, ['title', 'content']),
+                _.pick(issue, ['title', 'content', 'category_id']),
             )
         )
     },
@@ -50,4 +51,17 @@ export default {
 
         commit('removeIssue', index);
     },
+
+    categoryChange({commit, getters}, {issue, category}) {
+        const actual = getters.getIssueById(issue.id);
+
+        const index = getters.getIssueIndexById(issue.id);
+
+        commit(
+            'updateIssue', {
+                index,
+                issue: {category_id: category.id}
+            }
+        )
+    }
 }

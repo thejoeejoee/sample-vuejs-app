@@ -25,9 +25,8 @@
     export default {
         name: "IssueFilter",
         props: {
-            issues: {
-                type: Array,
-            }
+            issues: Array,
+            hasFilter: Boolean
         },
         data() {
             return {
@@ -53,6 +52,9 @@
         watch: {
             issues() {
                 this.onFilter()
+            },
+            input() {
+                this.$emit('update:has-filter', !!this.input)
             }
         },
         created() {

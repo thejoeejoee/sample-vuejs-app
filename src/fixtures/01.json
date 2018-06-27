@@ -1,0 +1,45 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Bugs",
+      "variant": "danger",
+      "issues": [
+        {
+          "id": 1,
+          "title": "First issue",
+          "content": "Buy it, use it, break it, fix it!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Requests",
+      "variant": "primary",
+      "issues": [
+        {
+          "id": 4,
+          "title": "Run npm audit",
+          "content": "Run audit to check dangerous packages."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Features",
+      "variant": "success",
+      "issues": [
+        {
+          "id": 2,
+          "title": "Add some js linters",
+          "content": "Some js code looks like one big piece of sh*t."
+        },
+        {
+          "id": 3,
+          "title": "Automatic deployment",
+          "content": "Add automatic GH deployment via Travis CI."
+        }
+      ]
+    }
+  ]
+}

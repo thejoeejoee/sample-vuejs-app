@@ -1,12 +1,12 @@
 <template>
-    <b-container>
+    <b-container fluid>
         <issue-app title="Issues"></issue-app>
     </b-container>
 </template>
 
 <script>
     import {mapMutations, mapState} from 'vuex'
-    import issuesFixture from './fixtures/issues'
+    import fixture from './fixtures/01'
     import IssueApp from './components/IssueApp'
 
     export default {
@@ -14,11 +14,11 @@
         components: {
             IssueApp,
         },
-        computed: mapState(['issues']),
-        methods: mapMutations(['setIssues']),
+        computed: mapState(['categories']),
+        methods: mapMutations(['setCategories']),
         created() {
-            if (!this.issues.length)
-                this.setIssues(issuesFixture.issues)
+            if (!this.categories.length)
+                this.setCategories(fixture.categories);
         },
     }
 </script>

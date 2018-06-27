@@ -1,5 +1,5 @@
 <template>
-    <b-card class="mb-4">
+    <b-card class="mb-4" :border-variant="variant">
 
         <template slot="header">
             <span class="row no-gutters justify-content-between">
@@ -14,6 +14,7 @@
                             class="form-control form-control-sm"
                     >
                     <template v-if="!editingTitle">
+                        <span v-if="!issue.title" class="text-muted">Title</span>
                         {{ issue.title }}
                     </template>
 
@@ -51,10 +52,8 @@
     export default {
         name: "Issue",
         props: {
-            issue: {
-                type: Object,
-                required: true,
-            }
+            issue: Object,
+            variant: String,
         },
         data() {
             return {
