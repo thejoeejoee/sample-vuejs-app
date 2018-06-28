@@ -39310,7 +39310,7 @@ module.exports = {"issues":[{"id":1,"title":"First issue","content":"Buy it, use
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_IssueApp_vue__ = __webpack_require__(40);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1ca5ad91_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_IssueApp_vue__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d77881c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_IssueApp_vue__ = __webpack_require__(103);
 function injectStyle (ssrContext) {
   __webpack_require__(89)
 }
@@ -39325,12 +39325,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-1ca5ad91"
+var __vue_scopeId__ = "data-v-4d77881c"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_IssueApp_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1ca5ad91_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_IssueApp_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d77881c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_IssueApp_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -39351,7 +39351,7 @@ var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(10)("1959f4a5", content, true, {});
+var update = __webpack_require__(10)("0ab146b8", content, true, {});
 
 /***/ }),
 /* 90 */
@@ -39362,7 +39362,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, ".handle img[data-v-1ca5ad91]{width:1em}", ""]);
+exports.push([module.i, ".handle img[data-v-4d77881c]{width:1em}", ""]);
 
 // exports
 
