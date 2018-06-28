@@ -1,6 +1,6 @@
 # Sample Vue.js app
 
-Issue management app as education sample app for learning basics of npm, webpack, VueJs and Vuex. Knowledge of HTML, ES6 JS a Bootstrap 4 is required.
+Issue management app as education sample app for learning basics of npm, webpack, VueJs and Vuex. Knowledge of HTML, ES6 JS a Bootstrap 4 is required. [Demo deployed on GH pages](https://thejoeejoee.github.io/sample-vuejs-app/).
 
 _All steps below have own git tag, so `git checkout N-...` to finish the step._
 
@@ -36,6 +36,16 @@ Integration of vuedraggable, issues have handle icon to drag and drop to change 
 
 ### 11 Title editation
 Toggling two elements based on mouse events.
+
+# Resources
+- [Vue doc](https://vuejs.org/v2/guide/index.html)
+- [Vuex doc](https://vuex.vuejs.org/guide/)
+- [Vue Boostrap doc](https://bootstrap-vue.js.org/docs/components)
+- [Lodash doc](https://lodash.com/docs/4.17.10)
+- [Vue loader doc](https://vue-loader.vuejs.org/)
+- [Webpack doc](https://webpack.js.org/concepts/)
+- [NPM doc](https://docs.npmjs.com/)
+
 
 # Author
 Josef Kolář, @thejoeejoee
