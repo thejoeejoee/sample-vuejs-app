@@ -5,6 +5,6 @@ module.exports = {
     output: {
         ...config.output,
         // GH pages path
-        publicPath: '/sample-vuejs-app/',
+        publicPath: '/sample-vuejs-app/dist/',
     },
 };
